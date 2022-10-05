@@ -1,14 +1,27 @@
 <template>
   <div>
-    <h1 v-bind:style="[tytleStyle, basicStyle]">Hello World</h1>
-    <!-- <h1 v-bind:id="dynamicId">hello title</h1>
-    <a v-bind:href="url">naver</a>
-    <img v-bind:src="image.src" v-bind:alt="image.alt" />
-    <input v-bind:type="inputType" />
-    <p v-bind:style="pStyle">Hello Vue!</p> -->
-    <p v-bind:style="{ color: 'red', fontSize: `${basicSzie}px` }">
-      hello vue!!
-    </p>
+    <h1>Hello Vue!</h1>
+    <h2 class="line-through">line-through</h2>
+    <h2 v-bind:class="textDecoration" class="text-red">line-through</h2>
+    <h2 :class="isDone === true ? 'line-through' : 'highlight'">
+      line-through
+    </h2>
+    <h2
+      :class="{
+        highlight: isDone === false,
+        'text-red': username === 'scalper',
+      }"
+    >
+      Object형태의 동적 클래스
+    </h2>
+    <h2
+      :class="[
+        isDone === true ? 'line-through' : 'highlight',
+        username === 'scalper' ? 'text-red' : 'text-green',
+      ]"
+    >
+      Array 형태의 동적 클래스 부여
+    </h2>
   </div>
 </template>
 
@@ -17,36 +30,27 @@ export default {
   name: "App",
   data() {
     return {
-      dynamicId: "content",
-      url: "https://naver.com",
-      image: {
-        src: "https://placeimg.com/100/100/any",
-        alt: "random image",
-      },
-      inputType: "color",
-      pStyle: "color: red; font-size: 36px;",
-      basicSzie: 100,
-      basicStyle: {
-        background: "yellow",
-      },
-      tytleStyle: {
-        "font-weight": "bold",
-        fontSize: "50px",
-        border: "1px solid red",
-      },
+      username: "scalper",
+      isDone: false,
+      textDecoration: "line-through",
     };
   },
 };
 </script>
 
 <style>
-#title {
+.text-red {
   color: red;
-  background: yellow;
+}
+.text-green {
+  color: green;
+}
+.highlight {
+  font-weight: bold;
+  background: pink;
 }
 
-#content {
-  color: blue;
-  background: pink;
+.line-through {
+  text-decoration: line-through;
 }
 </style>
