@@ -1,20 +1,15 @@
 <template>
   <div>
     <h1>Hello Vue!</h1>
-    <button v-on:click="activetab = 'Menu1'">Menu1</button>
-    <button v-on:click="activetab = 'Menu2'">Menu2</button>
-    <button v-on:click="activetab = 'Menu3'">Menu3</button>
-    <button v-on:click="test()">test</button>
+    <button @click="activetab = 'Menu1'">Menu1</button>
+    <button @click="activetab = 'Menu2'">Menu2</button>
+    <button @click="activetab = 'Menu3'">Menu3</button>
     <!-- <Menu1 v-if="activeTab === 'Menu1'" />
     <Menu2 v-if="activeTab === 'Menu2'" />
     <Menu3 v-if="activeTab === 'Menu3'" /> -->
-    <!-- <keep-alive>
+    <keep-alive>
       <component :is="activeTab"></component>
-    </keep-alive> -->
-
-    <Menu1 v-if="activeTab === 'Menu1'" />
-    <Menu2 v-if="activeTab === 'Menu2'" />
-    <Menu3 v-if="activeTab === 'Menu3'" />
+    </keep-alive>
   </div>
 </template>
 
@@ -29,7 +24,6 @@ export default {
     return {
       username: "scalper",
       activeTab: "Menu1",
-      status: false,
     };
   },
   provide() {
@@ -37,11 +31,7 @@ export default {
       name: this.username,
     };
   },
-  methods: {
-    test() {
-      console.log("test");
-    },
-  },
+  methods: {},
   directives: {},
   computed: {},
   watch: {},
