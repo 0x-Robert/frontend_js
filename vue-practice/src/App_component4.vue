@@ -1,36 +1,34 @@
 <template>
   <div>
-    <h1>Hello Components!</h1>
-    <button @click="displayDetail = true">show detail</button>
-    <DetailView
-      v-if="displayDetail"
-      @closeDetail="close"
-      @sendData="showData"
-    />
+    <!-- <li v-for="product in products" :key="product.id">{{ product }}</li> -->
+    <ProductList :products="products" />
+  </div>
+  <div>
+    <GreetingUser id="greeting" />
   </div>
 </template>
 
 <script>
-import DetailView from "./components/DetailView";
+import ProductList from "./components/ProductList";
+import GreetingUser from "./components/GreetingUser.vue";
 export default {
   name: "App",
   components: {
-    DetailView,
+    ProductList,
+    GreetingUser,
   },
   data() {
     return {
-      displayDetail: false,
+      products: [
+        { id: 0, name: "TV", price: 500000, company: "LG" },
+        { id: 1, name: "노트북", price: 500000, company: "samsung" },
+        { id: 2, name: "에어컨", price: 500000, company: "apple" },
+        { id: 3, name: "냉장고", price: 500000, company: "sony" },
+        { id: 4, name: "TV", price: 500000, company: "google" },
+      ],
     };
   },
-  methods: {
-    close() {
-      console.log("event emitted");
-      this.displayDetail = false;
-    },
-    showData(data) {
-      console.log(data, "send data");
-    },
-  },
+  methods: {},
   directives: {},
   computed: {},
   watch: {},
