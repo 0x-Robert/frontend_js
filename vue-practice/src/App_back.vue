@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Hello Vue!</h1>
-    <h2 class="line-through">line-through</h2>
   </div>
 </template>
 
@@ -11,11 +10,11 @@ export default {
   data() {
     return {};
   },
+  methods: {},
+  directives: {},
+  computed: {},
+  watch: {},
 };
 </script>
 
-<style>
-.line-through {
-  text-decoration: line-through;
-}
-</style>
+<style></style>
