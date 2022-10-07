@@ -1,15 +1,16 @@
 <template>
   <div>
-    <h1>Hello Mixins!</h1>
-    <!-- 재사용하기 위해 사용함 -->
-    <ProductStatus />
+    <h1>Hello LifeCycle !</h1>
+    <ParentComp />
   </div>
 </template>
 
 <script>
-import ProductStatus from "./components/mixin/ProductStatus.vue";
+import ParentComp from "./components/lifecycle/ParentComp";
+
 export default {
   name: "App",
+  components: { ParentComp },
   data() {
     return {};
   },
@@ -17,7 +18,6 @@ export default {
   directives: {},
   computed: {},
   watch: {},
-  components: { ProductStatus },
 };
 </script>
 

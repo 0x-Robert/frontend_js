@@ -1,15 +1,17 @@
 <template>
   <div>
-    <h1>Hello Mixins!</h1>
-    <!-- 재사용하기 위해 사용함 -->
-    <ProductStatus />
+    <h1>Hello HTTP Request!</h1>
+    <TodoList />
   </div>
 </template>
 
 <script>
-import ProductStatus from "./components/mixin/ProductStatus.vue";
+import TodoList from "./components/http/TodoList";
 export default {
   name: "App",
+  components: {
+    TodoList,
+  },
   data() {
     return {};
   },
@@ -17,7 +19,6 @@ export default {
   directives: {},
   computed: {},
   watch: {},
-  components: { ProductStatus },
 };
 </script>
 
