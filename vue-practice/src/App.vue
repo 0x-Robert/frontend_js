@@ -1,15 +1,18 @@
 <template>
   <div>
-    <h1>Hello Mixins!</h1>
-    <!-- 재사용하기 위해 사용함 -->
-    <ProductStatus />
+    <h1>Hello Composition!</h1>
+    <!-- 컴포지션은 데이터의 재사용과 유지보수를 더 편리하게 하려고 사용함 -->
+    <h2><TestComponent /></h2>
   </div>
 </template>
 
 <script>
-import ProductStatus from "./components/mixin/ProductStatus.vue";
+import TestComponent from "./components/composition/TestComponent.vue";
 export default {
   name: "App",
+  components: {
+    TestComponent,
+  },
   data() {
     return {};
   },
@@ -17,7 +20,6 @@ export default {
   directives: {},
   computed: {},
   watch: {},
-  components: { ProductStatus },
 };
 </script>
 
